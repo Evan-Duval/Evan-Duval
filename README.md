@@ -10,7 +10,7 @@ Je suis un étudiant motivé à intégrer le monde professionnel à travers une 
 
 ⏳ Durée de l'alternance : de 12 à 36 mois
 
-Je suis passionné par le développement Web et la conception d'Application et désireux d'apporter mon énergie et mes idées à votre équipe. Si mon profil vous intéresse, n'hésitez pas à me contacter par mail : duvalevan368@gmail.com 📧.
+Je suis passionné par le développement Web et la conception d'Application et désireux d'apporter mon énergie et mes idées à votre équipe. Si mon profil vous intéresse, n'hésitez pas à me contacter par mail : duvalevan368@gmail.com 📧 ou sur LinkedIn : https://www.linkedin.com/in/evan-duval.
 
 Cordialement,
 
