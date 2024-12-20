@@ -40,10 +40,10 @@ body {
 
 .navbar .nav-links ul li {
     margin: 0, 25px;
-    padding: 10px;
+    padding-right: 100px;
 }
 
 .navbar .nav-links ul li.active a {
-    color:red;
+    color:rgb(252, 98, 98);
     font-weight: 600;
 }
