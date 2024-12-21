@@ -11,6 +11,23 @@
 body {
     font-family: "Poppins", sans-serif;
     padding: 0px 50px;
-    background-color: #000;
-    color: #fff;
+    background-image: url("../media/black-background-wallpaper.jpg");
+    background-size: 100vw;
+    background-repeat: none;
+    background-position: block;
+}
+
+.banderolle img.ordinateur {
+    width: 35%;
+    height: auto;
+    margin-top: 200px;
+    margin-left: -175px;
+}
+
+.card {
+    backdrop-filter: blur(3px) saturate(200%);
+    -webkit-backdrop-filter: blur(3px) saturate(200%);
+    background-color: rgba(17, 25, 40, 0.71);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
 }

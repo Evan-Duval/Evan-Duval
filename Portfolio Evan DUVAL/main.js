@@ -16,5 +16,13 @@ fetch('../auto/navbar/navbar.html')
                 link.parentElement.classList.add('active');
             }
         });
+
+        const navExtender = document.querySelector('.nav-extender');
+        const navLinksB = document.querySelector('.nav-links');
+
+        navExtender.addEventListener('click', () => {
+            navLinksB.classList.toggle('visible');
+            navExtender.classList.toggle('rotated');
+        });
     })
     .catch(error => console.error('Erreur lors du chargement de la navbar:', error));
