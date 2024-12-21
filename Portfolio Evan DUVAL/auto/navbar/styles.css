@@ -21,7 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100vw;
+    width: 95vw;
     box-sizing: border-box;
 }
 
@@ -43,26 +43,7 @@ body {
     padding-right: 100px;
 }
 
-.navbar .nav-links ul li:not(.nav-extender) {
-    display: none;
-    margin: 0 25px;
-    padding-right: 100px;
-}
-
-.navbar .nav-links.visible ul li:not(.nav-extender) {
-    display: flex;  /* Changement de block à flex */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center;     /* Centre verticalement */
-    text-align: center;
-}
-
 .navbar .nav-links ul li.active a {
     color:rgb(252, 98, 98);
     font-weight: 600;
-}
-
-.navbar .nav-links .nav-extender {
-    cursor: pointer;
-    font-size: 2em;
-    display: block;
 }
