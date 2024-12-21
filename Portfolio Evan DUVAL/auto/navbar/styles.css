@@ -13,16 +13,38 @@ body {
     padding: 0px 50px;
     background-color: #000;
     color: #fff;
+    padding: 0px 50px;
+    background-image: url("../media/Minimalist-Wallpaper-4K-Desktop-HD.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0; /* Ajout pour éviter les marges indésirables */
+}
+
+main {
+    padding-top: 190px;
+    position: relative;
+    z-index: 1;
 }
 
 .navbar {
-    position: absolute;
+    position: fixed;
+    top: 20px;
+    left: 20px;
     padding: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 95vw;
+    width: calc(100% - 40px); /* Réduction de la largeur totale */
     box-sizing: border-box;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.37);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.7px);
+    -webkit-backdrop-filter: blur(9.7px);
+    border: 1px solid rgba(255, 255, 255);
 }
 
 .navbar a {

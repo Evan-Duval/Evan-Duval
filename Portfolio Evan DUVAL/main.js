@@ -1,6 +1,6 @@
 const navbarContainer = document.getElementById('navbar');
 
-fetch('../auto/navbar/navbar.html')
+fetch('/auto/navbar/navbar.html')
     .then(response => response.text())
     .then(data => {
         // Insérer la navbar dans le conteneur

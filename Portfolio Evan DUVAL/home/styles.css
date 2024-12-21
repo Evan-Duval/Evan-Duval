@@ -12,9 +12,9 @@ body {
     font-family: "Poppins", sans-serif;
     padding: 0px 50px;
     background-image: url("../media/Minimalist-Wallpaper-4K-Desktop-HD.jpg");
-    background-size: 100vw;
-    background-repeat: none;
-    background-position: block;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .banderolle img.ordinateur {
