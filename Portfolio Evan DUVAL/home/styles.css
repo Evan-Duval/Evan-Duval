@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 * {
     margin: 0;
@@ -11,12 +10,234 @@
 body {
     font-family: "Poppins", sans-serif;
     padding: 0px 50px;
+    background-color: #000;
+    color: #fff;
+    padding: 0px 50px;
     background-image: url("../media/Minimalist-Wallpaper-4K-Desktop-HD.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
+main {
+    padding-top: 190px;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 40px); /* Réduction de la largeur totale */
+    box-sizing: border-box;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.37); /* A voir pour mettre en #000 */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.7px);
+    -webkit-backdrop-filter: blur(9.7px);
+    border: 1px solid rgba(255, 255, 255);
+}
+
+.navbar a {
+    color: #fff;
+}
+
+.navbar .portfolio {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.navbar .portfolio .linkedIn {
+    color: #0E76A8;
+    margin-left: 10px;
+}
+
+.navbar .portfolio .github {
+    color: #000;
+    margin-left: 10px;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0, 25px;
+    padding-right: 100px;
+}
+
+.navbar .nav-links ul li.active a {
+    color:rgb(252, 98, 98);
+    font-weight: 600;
+}
+
+/* Présentation */
+#presentation {
+    background: rgba(141, 141, 141, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.4px);
+    -webkit-backdrop-filter: blur(12.4px);
+    border: 1px solid rgba(141, 141, 141, 0.77);
+
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#presentation h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#presentation p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Projets / Compétences */
+#projets h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.projets-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.projets-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+}
+
+.projet-card {
+    background-color: rgba(255, 255, 255, 0.28);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid #ddd;
+    padding: 20px;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.projet-card.active {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.projet-card:not(.active) {
+    transform: scale(0.8);
+    opacity: 0.6;
+}
+
+.github-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 2em;
+}
+
+.languages {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.language-card {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.scroll-button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.scroll-button.left {
+    left: 0;
+}
+
+.scroll-button.right {
+    right: 0;
+}
+
+/* Contact */
+#contact {
+    background-color: rgba(255, 255, 255, 0.28);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+#contact label {
+    font-size: 1.2em;
+}
+
+#contact input, #contact textarea {
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#contact button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
+}
 .banderolle img.ordinateur {
     width: 35%;
     height: auto;

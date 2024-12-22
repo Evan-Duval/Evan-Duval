@@ -1,20 +1,25 @@
-const navbarContainer = document.getElementById('navbar');
+const container = document.querySelector('.projets-container');
+const cards = document.querySelectorAll('.projet-card');
 
-fetch('/auto/navbar/navbar.html')
-    .then(response => response.text())
-    .then(data => {
-        // Insérer la navbar dans le conteneur
-        document.getElementById('navbar').innerHTML = data;
+function scrollLeft() {
+    container.scrollBy({ left: -300, behavior: 'smooth' });
+    updateActiveCard();
+}
 
-        // Identifier la page actuelle à partir de l'URL
-        const currentPage = window.location.pathname.split('/')[1]; // Extrait le dossier courant
-        const navLinks = document.querySelectorAll('.nav-links ul li a');
+function scrollRight() {
+    container.scrollBy({ left: 300, behavior: 'smooth' });
+    updateActiveCard();
+}
 
-        // Parcourir tous les liens pour marquer le lien actif
-        navLinks.forEach(link => {
-            if (link.getAttribute('data-page') === currentPage) {
-                link.parentElement.classList.add('active');
-            }
-        });
-    })
-    .catch(error => console.error('Erreur lors du chargement de la navbar:', error));
+function updateActiveCard() {
+    const activeCard = document.querySelector('.projet-card.active');
+    if (activeCard) {
+        activeCard.classList.remove('active');
+    }
+    const middleCard = Math.round(container.scrollLeft / 300);
+    cards[middleCard].classList.add('active');
+}
+
+container.addEventListener('scroll', () => {
+    updateActiveCard();
+});
