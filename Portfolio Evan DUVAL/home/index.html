@@ -1,81 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link rel="stylesheet" href="../auto/navbar/styles.css">
         <link rel="stylesheet" href="styles.css">
+
         <title>Portfolio de Evan DUVAL</title>
     </head>
-
+    
     <body>
+        
         <header>
-            <div id="navbar"></div>
+            <nav class="navbar">
+                <h1 class="portfolio">
+                    Evan DUVAL
+                    <a class="linkedIn" href="https://www.linkedin.com/in/evan-duval/" target="_blank"><i class='bx bxl-linkedin-square' ></i></a>
+                    <a class="github" href="https://github.com/Evan-Duval" target="_blank"><i class='bx bxl-github' ></i></a>
+                </h1>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#presentation" data-page="home">Home</a></li>
+                        <li><a href="#projets" data-page="competences">Projets / Compétences</a></li>
+                        <li><a href="#cv" data-page="cv">CV</a></li>
+                        <li><a href="#contact" data-page="contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
         </header>
 
         <main>
+            <!-- Présentation personnelle -->
+            <section id="presentation">
+                <h1>Présentation</h1>
+                <p>
+                    Bonjour 👋<br>
+                    Actuellement en première année d’un Bachelor Concepteur développeur
+                    d'applications au CESI de Caen, je suis à la recherche d’une alternance qui
+                    commencerait dès que possible avec le rythme suivant : 1 semaine à l’école, 3
+                    semaines en entreprise ou bien d’un stage d’une durée de 40 jours qui se déroulerait entre le 7 avril et le 30 juin.
+                    <br><br>
+                    N'hésitez pas à me contacter pour en savoir plus sur mes projets et mes expériences. 🗒️
+                </p>
+            </section>
 
-            <!-- <div class="banderolle">
-                <img class="ordinateur" src="../media/pcai.png" alt="ordinateur">
-            </div> -->
-    
-                <div class="parent">
-                    <div class="card">
-                        <div class="content-box">
-                            <h1 class="card-title">Qui suis-je ?</h1>
-                            <p class="card-content">
-                                Je m'appelle Evan, j'ai intégré cette année un 
-                                Bachelor Concepeur et Développeur d'Applications au CESI de Caen.
-                                Je suis passionné par le développement web depuis 3 ans, passion venant des jeux vidéos 
-                                et souhaite m'améliorer dans ce domaine tout en découvrant la vie active, 
-                                d'où mon choix d'une formation en Alternance.
-                            </p>
-                            <span class="see-more"><a class="see-more" href="#">En savoir plus</a></span>
+            <!-- Projets effectués -->
+            <section id="projets">
+                <h2>Projets</h2>
+                <div class="projets-wrapper">
+                    <button class="scroll-button left" onclick="scrollLeft()">&#9664;</button>
+                    <div class="projets-container">
+                        <div class="projet-card active">
+                            <h3>Projet 1</h3>
+                            <p>Description du projet 1.</p>
+                            <a href="https://github.com/username/projet1" target="_blank">
+                                <button class="github-button">
+                                    <i class='bx bxl-github'></i>
+                                </button>
+                            </a>
+                            <div class="languages">
+                                <div class="language-card">HTML</div>
+                                <div class="language-card">CSS</div>
+                                <div class="language-card">JavaScript</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-    
-                <div class="parent card2">
-                    <div class="card">
-                        <div class="content-box">
-                            <h1 class="card-title">Mes Projets et Compétences</h1>
-                            <p class="card-content">
-                                Au sein du CESI de Caen, j'ai eu l'occasion de faire différents projets
-                                Je possède des connaisssances dans différentes languages de programmation
-                                : C, HTML, CSS, JS, PHP, SQL et certains FrameWorks 
-                                tel que VueJS ou ExpressJS.
-                            </p>
-                            <span class="see-more"><a class="see-more" href="#">En savoir plus</a></span>
+                        <div class="projet-card">
+                            <h3>Projet 2</h3>
+                            <p>Description du projet 2.</p>
+                            <a href="https://github.com/username/projet1" target="_blank">
+                                <button class="github-button">
+                                    <i class='bx bxl-github'></i>
+                                </button>
+                            </a>
+                            <div class="languages">
+                                <div class="language-card">Python</div>
+                                <div class="language-card">Django</div>
+                            </div>
                         </div>
+                        <!-- Ajoutez d'autres projets ici -->
                     </div>
+                    <button class="scroll-button right" onclick="scrollRight()">&#9654;</button>
                 </div>
-    
-                <div class="parent card3">
-                    <div class="card">
-                        <div class="content-box">
-                            <h1 class="card-title">Me Contacter</h1>
-                            <p class="card-content">
-                                Si vous souhaitez me contacter,
-                                tapez sur le boutton ci-dessous !
-                            </p>
-                            <span class="see-more"><a class="see-more" href="#">En savoir plus</a></span>
-                        </div>
-                    </div>
-                </div>
+            </section>
 
-                <br>
-                <br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br>
-                <br><br><br><br><br><br><br>
-                <h1>hgeer</h1>
+            <!-- Boutton de contact -->
+            <section id="contact">
+                <h2>Contact</h2>
+                <form action="submit_form.php" method="post">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required> 
 
+                    <label for="name">Prénom :</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                    
+                    <button type="submit">Envoyer</button>
+                </form>
+            </section>
         </main>
 
-
-        <script src="../main.js"></script>
     </body>
 </html>

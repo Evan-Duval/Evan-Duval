@@ -18,7 +18,6 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    margin: 0; /* Ajout pour éviter les marges indésirables */
 }
 
 main {
@@ -39,7 +38,7 @@ main {
     box-sizing: border-box;
     z-index: 1000;
 
-    background: rgba(255, 255, 255, 0.37);
+    background: rgba(255, 255, 255, 0.37); /* A voir pour mettre en #000 */
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(9.7px);
@@ -56,6 +55,16 @@ main {
     font-weight: bold;
 }
 
+.navbar .portfolio .linkedIn {
+    color: #0E76A8;
+    margin-left: 10px;
+}
+
+.navbar .portfolio .github {
+    color: #000;
+    margin-left: 10px;
+}
+
 .navbar .nav-links ul {
     display: flex;
 }
@@ -68,4 +77,131 @@ main {
 .navbar .nav-links ul li.active a {
     color:rgb(252, 98, 98);
     font-weight: 600;
+}
+
+/* Présentation */
+#presentation {
+    background: rgba(141, 141, 141, 0.34);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.4px);
+    -webkit-backdrop-filter: blur(12.4px);
+    border: 1px solid rgba(141, 141, 141, 0.77);
+
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+#presentation h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#presentation p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Projets / Compétences */
+#projets h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.projets-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.projet-card {
+    background-color: rgba(255, 255, 255, 0.28);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.projet-card h3 {
+    margin-top: 0;
+}
+
+.github-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    font-size:2em;
+}
+
+.languages {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.language-card {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Contact */
+#contact {
+    background-color: rgba(255, 255, 255, 0.28);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.6px);
+    -webkit-backdrop-filter: blur(6.6px);
+
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+}
+
+#contact label {
+    font-size: 1.2em;
+}
+
+#contact input, #contact textarea {
+    font-family: "Poppins", sans-serif;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#contact button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #0056b3;
 }
