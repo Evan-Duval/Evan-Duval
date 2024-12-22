@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const leftButton = document.querySelector('.scroll-button.left');
     const rightButton = document.querySelector('.scroll-button.right');
     let activeIndex = Array.from(cards).findIndex(card => card.classList.contains('active'));
+    let autoScrollInterval;
+    let isPaused = false;
 
-    // Vérifier si des boutons doivent être désactivés
+    // Mise à jour des boutons
     const updateButtons = () => {
         leftButton.style.opacity = activeIndex === 0 ? '0.5' : '1';
         leftButton.style.cursor = activeIndex === 0 ? 'default' : 'pointer';
@@ -25,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: smooth ? 'smooth' : 'instant'
         });
 
-        // Mettre à jour les classes active
         cards.forEach((card, index) => {
             if (index === activeIndex) {
                 card.classList.add('active');
@@ -44,20 +45,47 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newIndex >= 0 && newIndex < cards.length) {
             activeIndex = newIndex;
             centerActiveCard();
+        } else if (newIndex >= cards.length) {
+            // Retour au début
+            activeIndex = 0;
+            centerActiveCard();
+        } else if (newIndex < 0) {
+            // Aller à la fin
+            activeIndex = cards.length - 1;
+            centerActiveCard();
         }
     };
 
+    // Défilement automatique
+    const startAutoScroll = () => {
+        if (autoScrollInterval) clearInterval(autoScrollInterval);
+        autoScrollInterval = setInterval(() => {
+            if (!isPaused) {
+                navigateToCard(1);
+            }
+        }, 6000); // Change de carte toutes les 6 secondes
+    };
+
+    // Pause au survol
+    container.addEventListener('mouseenter', () => {
+        isPaused = true;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        isPaused = false;
+    });
+
     // Click events pour les boutons
     leftButton.addEventListener('click', () => {
-        if (activeIndex > 0) {
-            navigateToCard(-1);
-        }
+        navigateToCard(-1);
+        isPaused = true;
+        setTimeout(() => { isPaused = false; }, 5000); // Reprend après 5 secondes
     });
 
     rightButton.addEventListener('click', () => {
-        if (activeIndex < cards.length - 1) {
-            navigateToCard(1);
-        }
+        navigateToCard(1);
+        isPaused = true;
+        setTimeout(() => { isPaused = false; }, 5000); // Reprend après 5 secondes
     });
 
     // Défilement manuel
@@ -69,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const containerCenter = container.offsetWidth / 2;
             const scrollPosition = container.scrollLeft + containerCenter;
 
-            // Trouver la carte la plus proche du centre
             let minDistance = Infinity;
             let closestIndex = activeIndex;
 
@@ -94,12 +121,39 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'ArrowLeft') {
             navigateToCard(-1);
+            isPaused = true;
+            setTimeout(() => { isPaused = false; }, 5000);
         } else if (e.key === 'ArrowRight') {
             navigateToCard(1);
+            isPaused = true;
+            setTimeout(() => { isPaused = false; }, 5000);
         }
+    });
+
+    // Touch events
+    let touchStartX;
+    container.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        isPaused = true;
+    });
+
+    container.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const difference = touchStartX - touchEndX;
+        
+        if (Math.abs(difference) > 50) { // Minimum swipe distance
+            if (difference > 0) {
+                navigateToCard(1);
+            } else {
+                navigateToCard(-1);
+            }
+        }
+        
+        setTimeout(() => { isPaused = false; }, 5000);
     });
 
     // Initialisation
     centerActiveCard(false);
     updateButtons();
+    startAutoScroll();
 });
