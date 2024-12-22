@@ -114,14 +114,25 @@ main {
     display: flex;
     align-items: center;
     position: relative;
+    width: 100%;
+    padding: 2rem 0;
 }
 
 .projets-container {
     display: flex;
     overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
     scroll-snap-type: x mandatory;
+    gap: 20px;
+    width: 100%;
+    padding: 20px calc(50% - 100px); /* Ajout de padding pour permettre le centrage */
+    margin: 0 40px; /* Espace pour les boutons de défilement */
+    scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+    -ms-overflow-style: none; /* Cache la scrollbar sur IE/Edge */
+}
+
+/* Cache la scrollbar sur Chrome/Safari */
+.projets-container::-webkit-scrollbar {
+    display: none;
 }
 
 .projet-card {
@@ -132,19 +143,19 @@ main {
     -webkit-backdrop-filter: blur(6.6px);
     border: 1px solid #ddd;
     padding: 20px;
-    min-width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 300px; /* Largeur fixe pour les cartes */
     scroll-snap-align: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Empêche les cartes de se rétrécir */
 }
 
 .projet-card.active {
-    transform: scale(1.2);
+    transform: scale(1.1);
     opacity: 1;
 }
 
 .projet-card:not(.active) {
-    transform: scale(0.8);
+    transform: scale(0.9);
     opacity: 0.6;
 }
 
@@ -163,7 +174,7 @@ main {
 }
 
 .language-card {
-    background-color: #e0e0e0;
+    background-color: #e0e0e0a6;
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 14px;
@@ -178,6 +189,8 @@ main {
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+    padding: 1rem;
+    transition: opacity 0.3s ease;
 }
 
 .scroll-button.left {
