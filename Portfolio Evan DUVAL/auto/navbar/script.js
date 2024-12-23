@@ -1,9 +1,6 @@
-const navItems = document.querySelectorAll('.nav-links ul li');
+const navExtender = document.querySelector('.nav-extender');
+const navLinks = document.querySelector('.nav-links'); // Modifié pour sélectionner un seul élément
 
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        navItems.forEach(nav => nav.classList.remove('active'));
-
-        item.classList.add('active');
-    });
+navExtender.addEventListener('click', () => {
+    navLinks.classList.toggle('visible'); // Utilisez toggle au lieu de add
 });
