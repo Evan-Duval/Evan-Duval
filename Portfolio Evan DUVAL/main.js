@@ -66,6 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 6000); // Change de carte toutes les 6 secondes
     };
 
+    // Si la section projet est survolée par la souris arrêter le défilement automatique
+    const isHover = e => e.parentElement.querySelector(':hover') === e;    
+
+    const myDiv = document.getElementById('projets');
+    document.addEventListener('mousemove', function checkHover() {
+    const hovered = isHover(myDiv);
+    if (hovered !== checkHover.hovered) {
+        checkHover.hovered = hovered;
+
+        if (hovered) {
+            clearInterval(autoScrollInterval);
+        } else {
+            startAutoScroll();
+        }
+    }
+    });
+
     // Pause au survol
     container.addEventListener('mouseenter', () => {
         isPaused = true;
