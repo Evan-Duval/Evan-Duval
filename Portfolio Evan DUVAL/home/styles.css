@@ -17,7 +17,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: relative; /* Ajouté pour le contexte de superposition */
+    position: relative;
 }
 
 header {
@@ -25,9 +25,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* S'assure que le header reste au-dessus */
-    background: rgba(0, 0, 0, 0.2); /* Fond légèrement transparent */
-    backdrop-filter: blur(8px); /* Effet de flou */
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px); 
 }
 
 main {
@@ -49,7 +49,7 @@ main {
 
 .navbar a {
     color: #fff;
-    transition: color 0.3s ease; /* Animation douce pour le hover */
+    transition: color 0.3s ease;
 }
 
 .navbar .portfolio {
@@ -62,18 +62,18 @@ main {
 .navbar .portfolio .linkedIn {
     color: #0E76A8;
     margin-left: 10px;
-    font-size: 0.8em; /* Ajusté pour mieux correspondre au texte */
+    font-size: 0.8em;
 }
 
 .navbar .portfolio .github {
-    color: #fff; /* Changé à blanc pour une meilleure visibilité */
+    color: #fff;
     margin-left: 10px;
     font-size: 0.8em;
 }
 
 .navbar .nav-links ul {
     display: flex;
-    gap: 25px; /* Utilisation de gap pour un espacement consistent */
+    gap: 25px;
 }
 
 .navbar .nav-links ul li {
@@ -128,7 +128,7 @@ main {
     position: relative;
     width: 100%;
     padding: 4rem 0;
-    min-height: 500px; /* Hauteur minimum pour éviter les sauts */
+    min-height: 500px;
 }
 
 .projets-container {
@@ -141,7 +141,7 @@ main {
     margin: 0 60px;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    align-items: center; /* Centre verticalement les cartes */
+    align-items: center;
 }
 
 .projets-container::-webkit-scrollbar {
@@ -156,15 +156,15 @@ main {
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 30px;
-    width: 350px; /* Largeur fixe */
-    min-height: 300px; /* Hauteur minimum */
-    max-height: 80vh; /* Hauteur maximum */
+    width: 350px;
+    min-height: 300px; 
+    max-height: 80vh; 
     scroll-snap-align: center;
     transition: all 0.4s ease;
-    flex: 0 0 350px; /* Empêche le rétrécissement et la croissance */
+    flex: 0 0 350px; 
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Permet le défilement vertical si nécessaire */
+    overflow-y: auto; /* Ajout d'un scroll vertical dans la description si le contenu dépasse */
 }
 
 .projet-card::-webkit-scrollbar {
@@ -182,13 +182,13 @@ main {
 }
 
 .projet-card.active {
-    transform: scale(1.2); /* Scale plus important */
+    transform: scale(1.2);
     opacity: 1;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .projet-card:not(.active) {
-    transform: scale(0.85); /* Réduction plus importante */
+    transform: scale(0.85);
     opacity: 0.5;
 }
 
@@ -197,13 +197,13 @@ main {
 }
 
 .projet-card p {
-    flex-grow: 1; /* Permet à la description de prendre l'espace disponible */
+    flex-grow: 1;
     margin-bottom: 1rem;
-    overflow-wrap: break-word; /* Empêche les mots longs de déborder */
+    overflow-wrap: break-word;
 }
 
 .projet-card .languages {
-    margin-top: auto; /* Pousse les languages vers le bas */
+    margin-top: auto;
 }
 
 .scroll-button {
