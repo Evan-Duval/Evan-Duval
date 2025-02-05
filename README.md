@@ -1,4 +1,4 @@
-🎓 Étudiant à la recherche d'une alternance 📅 ou d'un stage du 7 avril au 30 juin
+🎓 Étudiant à la recherche d'une alternance 📅 ou d'un stage du 7 avril au 27 juin
 
 🔄 Rythme de travail :
 3 semaines en entreprise 🏢
